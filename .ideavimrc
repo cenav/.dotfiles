@@ -86,12 +86,27 @@ xnoremap Y y$
 "noremap <leader>y "+y<CR>
 "noremap <leader>p "0p<CR>
 
-" ThePrimeagen remaps
+" ----- ThePrimeagen remaps -----
+vnoremap K :action MoveLineUp<CR>
+vnoremap J :action MoveLineDown<CR>
+"vnoremap <leader>j :m '>+1<CR>gv=gv
+"vnoremap <leader>k :m '<-2<CR>gv=gv
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+nnoremap n nzzzv<CR>
+nnoremap N Nzzzv<CR>
+
 xnoremap <leader>p \"_dP
-xnoremap <leader>y \"+y
-xnoremap <leader>Y \"+Y
-vnoremap <leader>j :m '>+1<CR>gv=gv
-vnoremap <leader>k :m '<-2<CR>gv=gv
+
+nnoremap <leader>y \"+y
+vnoremap <leader>y \"+y
+nnoremap <leader>Y \"+Y
+
+nnoremap <leader>d \"_d
+vnoremap <leader>d \"_d
+
+nnoremap <leader>s :%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " ----- IDE Handlers -----
 sethandler <C-e> a:ide
