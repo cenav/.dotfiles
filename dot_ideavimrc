@@ -1,0 +1,113 @@
+" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+" Map \r to the Reformat Code action
+" map \r <Action>(ReformatCode)
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+""" Map leader to space 
+nnoremap <space> <Nop>
+let mapleader=" "
+
+" ----- Common settings -----
+set clipboard+=unnamed
+set clipboard+=ideaput
+set number relativenumber
+"set scrolloff=5
+set incsearch
+set showmode
+
+" ----- Idea specific settings -----
+set ideajoin
+set ideaput
+set idearefactormode=keep
+
+" ----- Plugins -----
+set NERDTree
+set easymotion
+set surround
+set highlightedyank
+"set multiple-cursors
+set matchit
+"set quickscope " is buggy
+set vim-paragraph-motion
+set textobj-entire
+set exchange " commands: cx, cxx, X, cxc
+set ReplaceWithRegister " commands: gr, grr  ex:griw
+
+" ----- Plugins settings -----
+"" highlightedyank
+let g:highlightedyank_highlight_duration = "500"
+"let g:highlightedyank_highlight_color = "rgba(255, 172, 51, 0.5)"
+"" multiple-cursors
+"map mc <A-n>
+"map mx <A-x>
+"map mp <A-p>
+
+" ----- Mappings -----
+nnoremap <leader>rc :e ~/.ideavimrc<CR>
+nnoremap <leader>rl :action IdeaVim.ReloadVimRc.reload<CR>
+map <C-c> <Esc>
+nnoremap <C-n> :action GotoClass<CR>
+nnoremap <C-z> :action ToggleZenMode<CR>
+nnoremap <C-j> :action EditorScrollDown<CR>
+nnoremap <C-k> :action EditorScrollUp<CR>
+nnoremap <C-w>r :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <A-w> :action EditorSelectWord<CR>
+nnoremap <A-j> :action StatementDown<CR>
+nnoremap <A-k> :action StatementUp<CR>
+"nnoremap <A-w> <action>(EditorSelectWord)
+"vnoremap <A-w> <action>(EditorSelectWord)
+vnoremap <A-w> :action EditorSelectWord<CR>
+nnoremap <leader>q :action QuickJavaDoc<CR>
+nnoremap == :action ReformatCode<CR>
+nnoremap <leader>ok :action DatabaseView.Tools.SubmitChanges<CR>
+nnoremap <leader>su :action SurroundWith<CR>
+vnoremap <leader>su :action SurroundWith<CR>
+noremap <leader>re :action RenameElement<CR>
+nnoremap <leader>rp :action Replace<CR>
+vnoremap <leader>rp :action Replace<CR>
+nnoremap [[ :action EditorCodeBlockStart<CR>
+nnoremap ]] :action EditorCodeBlockEnd<CR>
+vnoremap [[ :action EditorCodeBlockStart<CR>
+vnoremap ]] :action EditorCodeBlockEnd<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+nnoremap gs :action Console.Jdbc.ChooseSession<CR>
+" Reselect pasted text
+nnoremap gp `[v`]
+" Make Y consistent with other capital letter actions (A, C, D...)
+nnoremap Y y$
+xnoremap Y y$
+
+" Put d/x/r into the black hole register
+" nnoremap d "_d
+" nnoremap x "_x
+" nnoremap r "_r
+
+"noremap <leader>y "+y<CR>
+"noremap <leader>p "0p<CR>
+
+" ----- ThePrimeagen remaps -----
+vnoremap K :action MoveLineUp<CR>
+vnoremap J :action MoveLineDown<CR>
+"vnoremap <leader>j :m '>+1<CR>gv=gv
+"vnoremap <leader>k :m '<-2<CR>gv=gv
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+nnoremap n nzzzv<CR>
+nnoremap N Nzzzv<CR>
+
+xnoremap <leader>p \"_dP
+
+nnoremap <leader>y \"+y
+vnoremap <leader>y \"+y
+nnoremap <leader>Y \"+Y
+
+nnoremap <leader>d \"_d
+vnoremap <leader>d \"_d
+
+nnoremap <leader>s :%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>
+
+" ----- IDE Handlers -----
+sethandler <C-e> a:ide
+sethandler <C-f> a:ide
