@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('unblevable/quick-scope')
+  use('dbakker/vim-paragraph-motion')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',

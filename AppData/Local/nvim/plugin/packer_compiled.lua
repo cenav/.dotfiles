@@ -145,6 +145,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Cnavarro\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["quick-scope"] = {
+    loaded = true,
+    path = "C:\\Users\\Cnavarro\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\quick-scope",
+    url = "https://github.com/unblevable/quick-scope"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Cnavarro\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
