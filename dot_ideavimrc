@@ -62,6 +62,7 @@ nnoremap == :action ReformatCode<CR>
 nnoremap <leader>ok :action DatabaseView.Tools.SubmitChanges<CR>
 nnoremap <leader>su :action SurroundWith<CR>
 vnoremap <leader>su :action SurroundWith<CR>
+nnoremap <leader>se :action Console.Jdbc.ChooseSession<CR>
 noremap <leader>re :action RenameElement<CR>
 nnoremap <leader>rp :action Replace<CR>
 vnoremap <leader>rp :action Replace<CR>
@@ -69,9 +70,13 @@ nnoremap [[ :action EditorCodeBlockStart<CR>
 nnoremap ]] :action EditorCodeBlockEnd<CR>
 vnoremap [[ :action EditorCodeBlockStart<CR>
 vnoremap ]] :action EditorCodeBlockEnd<CR>
+
+" Navigation (go to)
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
-nnoremap gs :action Console.Jdbc.ChooseSession<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+
 " Reselect pasted text
 nnoremap gp `[v`]
 " Make Y consistent with other capital letter actions (A, C, D...)
