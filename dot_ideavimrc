@@ -63,9 +63,11 @@ nnoremap <leader>ok :action DatabaseView.Tools.SubmitChanges<CR>
 nnoremap <leader>su :action SurroundWith<CR>
 vnoremap <leader>su :action SurroundWith<CR>
 nnoremap <leader>se :action Console.Jdbc.ChooseSession<CR>
-noremap <leader>re :action RenameElement<CR>
+nnoremap <leader>mp :action ManageRecentProjects<CR>
 nnoremap <leader>rp :action Replace<CR>
 vnoremap <leader>rp :action Replace<CR>
+noremap <leader>re :action RenameElement<CR>
+
 nnoremap [[ :action EditorCodeBlockStart<CR>
 nnoremap ]] :action EditorCodeBlockEnd<CR>
 vnoremap [[ :action EditorCodeBlockStart<CR>
