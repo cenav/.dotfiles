@@ -7,7 +7,7 @@
 nnoremap <space> <Nop>
 let mapleader=" "
 
-" ----- Common settings -----
+""" Common settings -----
 set clipboard+=unnamed
 set clipboard+=ideaput
 set number relativenumber
@@ -15,38 +15,50 @@ set number relativenumber
 set incsearch
 set showmode
 
-" ----- Idea specific settings -----
+""" Idea specific settings -----
 set ideajoin
 set ideaput
 set idearefactormode=keep
 
-" ----- Plugins -----
-set NERDTree
+""" easy motion plugin  --------------------------------
 set easymotion
+map <leader>e <Plug>(easymotion-s)
+
+" ----- Plugins -----
+"set NERDTree
 set surround
 set highlightedyank
-"set multiple-cursors
+set multiple-cursors
 set matchit
-"set quickscope " is buggy
+set quickscope
 set vim-paragraph-motion
 set textobj-entire
 set exchange " commands: cx, cxx, X, cxc
 set ReplaceWithRegister " commands: gr, grr  ex:griw
 
 " ----- Plugins settings -----
-"" highlightedyank
+
+""" highlightedyank
 let g:highlightedyank_highlight_duration = "500"
 "let g:highlightedyank_highlight_color = "rgba(255, 172, 51, 0.5)"
-"" multiple-cursors
-"map mc <A-n>
-"map mx <A-x>
-"map mp <A-p>
+
+""" multiple-cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = '<A-n>'
+let g:multi_cursor_select_all_word_key = '<A-S-n>'
+let g:multi_cursor_start_key           = 'g<A-n>'
+let g:multi_cursor_select_all_key      = 'g<A-S-n>'
+let g:multi_cursor_next_key            = '<A-n>'
+let g:multi_cursor_prev_key            = '<A-p>'
+let g:multi_cursor_skip_key            = '<A-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 " ----- Mappings -----
+map <C-c> <Esc>
 nnoremap <leader>rc :e ~/.ideavimrc<CR>
 nnoremap <leader>rl :action IdeaVim.ReloadVimRc.reload<CR>
-map <C-c> <Esc>
 nnoremap <C-n> :action GotoClass<CR>
+inoremap <C-n> :action HippieCompletion<CR>
 nnoremap <C-z> :action ToggleZenMode<CR>
 nnoremap <C-j> :action EditorScrollDown<CR>
 nnoremap <C-k> :action EditorScrollUp<CR>
@@ -54,15 +66,15 @@ nnoremap <C-w>r :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <A-w> :action EditorSelectWord<CR>
 nnoremap <A-j> :action StatementDown<CR>
 nnoremap <A-k> :action StatementUp<CR>
-"nnoremap <A-w> <action>(EditorSelectWord)
-"vnoremap <A-w> <action>(EditorSelectWord)
 vnoremap <A-w> :action EditorSelectWord<CR>
+
 nnoremap <leader>q :action QuickJavaDoc<CR>
-nnoremap == :action ReformatCode<CR>
 nnoremap <leader>ok :action DatabaseView.Tools.SubmitChanges<CR>
+nnoremap <leader>cp :action CloseProject<CR>
 nnoremap <leader>su :action SurroundWith<CR>
 vnoremap <leader>su :action SurroundWith<CR>
 nnoremap <leader>se :action Console.Jdbc.ChooseSession<CR>
+nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>mp :action ManageRecentProjects<CR>
 nnoremap <leader>rp :action Replace<CR>
 vnoremap <leader>rp :action Replace<CR>
@@ -72,12 +84,13 @@ nnoremap [[ :action EditorCodeBlockStart<CR>
 nnoremap ]] :action EditorCodeBlockEnd<CR>
 vnoremap [[ :action EditorCodeBlockStart<CR>
 vnoremap ]] :action EditorCodeBlockEnd<CR>
+nnoremap == :action ReformatCode<CR>
 
 " Navigation (go to)
-nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gs :action GotoSuperMethod<CR>
+nnoremap <leader>ge :action GotoNextError<CR>
+nnoremap <leader>gE :action GotoPreviousError<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gs :action GotoSuperMethod<CR>
 
 " Reselect pasted text
 nnoremap gp `[v`]
@@ -101,8 +114,10 @@ vnoremap J :action MoveLineDown<CR>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
-nnoremap n nzzzv<CR>
-nnoremap N Nzzzv<CR>
+nnoremap n nzz
+nnoremap N Nzz
+"nnoremap n nzzzv<CR>
+"nnoremap N Nzzzv<CR>
 
 xnoremap <leader>p \"_dP
 

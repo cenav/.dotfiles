@@ -164,6 +164,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Cnavarro\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-paragraph-motion"] = {
+    loaded = true,
+    path = "C:\\Users\\Cnavarro\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-paragraph-motion",
+    url = "https://github.com/dbakker/vim-paragraph-motion"
   }
 }
 
