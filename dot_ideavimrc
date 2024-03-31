@@ -44,11 +44,11 @@ let g:highlightedyank_highlight_duration = "500"
 
 """ multiple-cursors
 let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_word_key      = '<A-n>'
-let g:multi_cursor_select_all_word_key = '<A-S-n>'
-let g:multi_cursor_start_key           = 'g<A-n>'
-let g:multi_cursor_select_all_key      = 'g<A-S-n>'
-let g:multi_cursor_next_key            = '<A-n>'
+let g:multi_cursor_start_word_key      = '<A-m>'
+let g:multi_cursor_select_all_word_key = '<A-S-m>'
+let g:multi_cursor_start_key           = 'g<A-m>'
+let g:multi_cursor_select_all_key      = 'g<A-S-m>'
+let g:multi_cursor_next_key            = '<A-m>'
 let g:multi_cursor_prev_key            = '<A-p>'
 let g:multi_cursor_skip_key            = '<A-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
@@ -58,7 +58,8 @@ map <C-c> <Esc>
 nnoremap <leader>rc :e ~/.ideavimrc<CR>
 nnoremap <leader>rl :action IdeaVim.ReloadVimRc.reload<CR>
 nnoremap <C-n> :action GotoClass<CR>
-inoremap <C-n> :action HippieCompletion<CR>
+inoremap <A-n> :action HippieCompletion<CR>
+inoremap <A-S-n> :action HippieBackwardCompletion<CR>
 nnoremap <C-z> :action ToggleZenMode<CR>
 nnoremap <C-j> :action EditorScrollDown<CR>
 nnoremap <C-k> :action EditorScrollUp<CR>
@@ -133,3 +134,4 @@ nnoremap <leader>s :%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>
 " ----- IDE Handlers -----
 sethandler <C-e> a:ide
 sethandler <C-f> a:ide
+sethandler <A-n> a:vim
