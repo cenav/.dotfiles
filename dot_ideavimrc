@@ -75,6 +75,7 @@ nnoremap <leader>cp :action CloseProject<CR>
 nnoremap <leader>su :action SurroundWith<CR>
 vnoremap <leader>su :action SurroundWith<CR>
 nnoremap <leader>se :action Console.Jdbc.ChooseSession<CR>
+nnoremap <leader>so :action Console.Jdbc.ChooseDataSource<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>mp :action ManageRecentProjects<CR>
 nnoremap <leader>rp :action Replace<CR>
