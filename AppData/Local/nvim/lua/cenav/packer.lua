@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
 	  -- Autocompletion
 	  {'hrsh7th/nvim-cmp'},     -- Required
 	  {'hrsh7th/cmp-nvim-lsp'}, -- Required
+	  {'hrsh7th/cmp-cmdline'},  -- Optional
+	  {'hrsh7th/cmp-path'},     -- Optional
 	  {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
