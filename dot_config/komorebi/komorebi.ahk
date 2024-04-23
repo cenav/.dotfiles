@@ -8,8 +8,8 @@
 #Down::Focus("down")
 #Up::Focus("up")
 #Right::Focus("right")
-#{::CycleFocus("previous")
-#}::CycleFocus("next")
+; #{::CycleFocus("previous")
+; #}::CycleFocus("next")
 
 ; Move windows
 #+Left::Move("left")
@@ -42,8 +42,25 @@
 ^#p::TogglePause()
 
 ; Layouts
-^#x::FlipLayout("horizontal")
-^#y::FlipLayout("vertical")
+#x::FlipLayout("horizontal")
+#y::FlipLayout("vertical")
+
+; Monitors
+#Home::CycleMonitor("previous")
+#End::CycleMonitor("next")
+
+#+Home::CycleMoveToMonitor("previous")
+#+End::CycleMoveToMonitor("next")
+
+; Target Monitor
+#!1::FocusMonitor(0)
+#!2::FocusMonitor(1)
+#!3::FocusMonitor(2)
+
+; Move windows across monitors
+#!^1::MoveToMonitor(0)
+#!^2::MoveToMonitor(1)
+#!^3::MoveToMonitor(2)
 
 ; Workspaces
 #1::FocusWorkspace(0)
@@ -53,8 +70,8 @@
 #5::FocusWorkspace(4)
 
 ; Move windows across workspaces
-^#1::MoveToWorkspace(0)
-^#2::MoveToWorkspace(1)
-^#3::MoveToWorkspace(2)
-^#4::MoveToWorkspace(3)
-^#5::MoveToWorkspace(4)
+#^1::MoveToWorkspace(0)
+#^2::MoveToWorkspace(1)
+#^3::MoveToWorkspace(2)
+#^4::MoveToWorkspace(3)
+#^5::MoveToWorkspace(4)

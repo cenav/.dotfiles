@@ -24,3 +24,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.cmd([[
   au BufNewFile,BufRead,BufReadPost *.tmp set syntax=plsql
 ]])
+
+
+vim.cmd([[
+  au BufNewFile,BufRead,BufReadPost *.keymap set syntax=dts
+]])

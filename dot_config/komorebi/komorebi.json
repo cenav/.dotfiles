@@ -26,11 +26,11 @@
     },
     {
       "workspaces": [
-        { "name": "A", "layout": "BSP" },
-        { "name": "B", "layout": "BSP" },
-        { "name": "C", "layout": "BSP" },
-        { "name": "D", "layout": "BSP" },
-        { "name": "E", "layout": "BSP" }
+        { "name": "A", "layout": "HorizontalStack" },
+        { "name": "B", "layout": "HorizontalStack" },
+        { "name": "C", "layout": "HorizontalStack" },
+        { "name": "D", "layout": "HorizontalStack" },
+        { "name": "E", "layout": "HorizontalStack" }
       ]
     }
   ]
