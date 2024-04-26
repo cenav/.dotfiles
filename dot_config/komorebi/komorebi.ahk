@@ -69,6 +69,8 @@
 #4::FocusWorkspace(3)
 #5::FocusWorkspace(4)
 
+#p::FocusLastWorkspace()
+
 ; Move windows across workspaces
 #^1::MoveToWorkspace(0)
 #^2::MoveToWorkspace(1)

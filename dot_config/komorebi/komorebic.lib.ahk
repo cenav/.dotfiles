@@ -455,3 +455,7 @@ NotificationSchema() {
 SocketSchema() {
     RunWait("komorebic.exe socket-schema", , "Hide")
 }
+
+FocusLastWorkspace() {
+    RunWait("komorebic.exe focus-last-workspace ", , "Hide")
+}
