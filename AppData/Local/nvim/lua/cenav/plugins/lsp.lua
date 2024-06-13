@@ -67,7 +67,11 @@ return {
           require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
       },
-      --TODO: Ctrl+Space not work on powershell yet
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+      --WARNING: Ctrl+Space not work on powershell yet
       mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -121,6 +125,13 @@ return {
         }
       }
     }
+
+    local cap = require('cmp_nvim_lsp').default_capabilities()
+
+    local lspconfig = require("lspconfig")
+    lspconfig.tsserver.setup({
+      capabilities = cap
+    })
 
     vim.diagnostic.config({
       -- update_in_insert = true,
