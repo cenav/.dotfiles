@@ -84,8 +84,8 @@ noremap <leader>re :action RenameElement<CR>
 
 nnoremap [[ :action EditorCodeBlockStart<CR>
 nnoremap ]] :action EditorCodeBlockEnd<CR>
-vnoremap [[ :action EditorCodeBlockStart<CR>
-vnoremap ]] :action EditorCodeBlockEnd<CR>
+vnoremap [[ :action EditorCodeBlockStartWithSelection<CR>
+vnoremap ]] :action EditorCodeBlockEndWithSelection<CR>
 nnoremap == :action ReformatCode<CR>
 
 " Navigation (go to)
